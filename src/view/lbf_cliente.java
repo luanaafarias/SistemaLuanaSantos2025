@@ -4,6 +4,8 @@
  */
 package view;
 
+import tools.Util;
+
 /**
  *
  * @author ghostface
@@ -18,6 +20,11 @@ public class lbf_cliente extends javax.swing.JDialog {
     public lbf_cliente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setTitle("Cadastro de Cliente");
+        setLocationRelativeTo(null);
+        Util.habilitar(false, jTxtID, jTxtNome, jTxtEndereco, jTxtEmail, jTxtCidade, jTxtBairro, jFmtCpf,
+                jFmtRg, jFmtDataNasc, jFmtCep, jFmtCelular, jChbAtivo,jCboSexo, jCboEstadoCivil, jCboEstado,
+                jBtnConfirmar, jBtnCancelar);
     }
 
     /**
@@ -94,28 +101,57 @@ public class lbf_cliente extends javax.swing.JDialog {
 
         jCboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
 
-        jChbAtivo.setText("jCheckBox1");
-
+        jBtnIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
         jBtnIncluir.setText("Incluir");
+        jBtnIncluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnIncluirActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Data de Nascimento");
 
+        jBtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/modificar.png"))); // NOI18N
         jBtnAlterar.setText("Alterar");
+        jBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnAlterarActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Celular");
 
+        jBtnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/excluir.png"))); // NOI18N
         jBtnExcluir.setText("Excluir");
+        jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnExcluirActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("E-mail");
 
+        jBtnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/confirmar1.png"))); // NOI18N
         jBtnConfirmar.setText("Confirmar");
+        jBtnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnConfirmarActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("CEP");
 
+        jBtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelar.png"))); // NOI18N
         jBtnCancelar.setText("Cancelar");
+        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCancelarActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("Endereço");
 
+        jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pesquisa1.png"))); // NOI18N
         jBtnPesquisar.setText("Pesquisar");
 
         jLabel12.setText("Bairro");
@@ -225,7 +261,7 @@ public class lbf_cliente extends javax.swing.JDialog {
                             .addComponent(jCboEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
+                        .addGap(13, 13, 13)
                         .addComponent(jBtnIncluir)
                         .addGap(18, 18, 18)
                         .addComponent(jBtnAlterar)
@@ -237,7 +273,7 @@ public class lbf_cliente extends javax.swing.JDialog {
                         .addComponent(jBtnCancelar)
                         .addGap(18, 18, 18)
                         .addComponent(jBtnPesquisar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(69, 69, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,6 +379,45 @@ public class lbf_cliente extends javax.swing.JDialog {
     private void jTxtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtNomeActionPerformed
+
+    private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
+        // TODO add your handling code here:
+         Util.habilitar(true, jTxtID, jTxtNome, jTxtEndereco, jTxtEmail, jTxtCidade, jTxtBairro, jFmtCpf,
+                jFmtRg, jFmtDataNasc, jFmtCep, jFmtCelular, jChbAtivo, jCboSexo, jCboEstadoCivil, jCboEstado,
+                jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(false, jBtnAlterar, jBtnExcluir, jBtnIncluir, jBtnPesquisar);
+        Util.limpar(jTxtID, jTxtNome, jTxtEndereco, jTxtEmail, jTxtCidade, jTxtBairro, jFmtCpf,
+                jFmtRg, jFmtDataNasc, jFmtCep, jFmtCelular, jChbAtivo);
+    }//GEN-LAST:event_jBtnIncluirActionPerformed
+
+    private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
+        // TODO add your handling code here:
+        Util.habilitar(true, jTxtID, jTxtNome, jTxtEndereco, jTxtEmail, jTxtCidade, jTxtBairro, jFmtCpf,
+                jFmtRg, jFmtDataNasc, jFmtCep, jFmtCelular, jChbAtivo, jCboSexo, jCboEstadoCivil, jCboEstado,
+                jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(false, jBtnAlterar, jBtnExcluir, jBtnIncluir, jBtnPesquisar);
+    }//GEN-LAST:event_jBtnAlterarActionPerformed
+
+    private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
+        // TODO add your handling code here:
+        Util.perguntar("Deseja excluir o registro?");
+    }//GEN-LAST:event_jBtnExcluirActionPerformed
+
+    private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
+        // TODO add your handling code here:
+        Util.habilitar(true, jTxtID, jTxtNome, jTxtEndereco, jTxtEmail, jTxtCidade, jTxtBairro, jFmtCpf,
+                jFmtRg, jFmtDataNasc, jFmtCep, jFmtCelular, jChbAtivo, jCboSexo, jCboEstadoCivil, jCboEstado,
+                jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(true, jBtnAlterar, jBtnExcluir, jBtnIncluir, jBtnPesquisar);
+    }//GEN-LAST:event_jBtnConfirmarActionPerformed
+
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
+        // TODO add your handling code here:
+        Util.habilitar(false, jTxtID, jTxtNome, jTxtEndereco, jTxtEmail, jTxtCidade, jTxtBairro, jFmtCpf,
+                jFmtRg, jFmtDataNasc, jFmtCep, jFmtCelular, jChbAtivo, jCboSexo, jCboEstadoCivil, jCboEstado,
+                jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(true, jBtnAlterar, jBtnExcluir, jBtnIncluir, jBtnPesquisar);
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
