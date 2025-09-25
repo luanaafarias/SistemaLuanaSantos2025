@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package view;
 
@@ -8,14 +8,15 @@ package view;
  *
  * @author ghostface
  */
-public class Clientes extends javax.swing.JFrame {
+public class lbf_cliente extends javax.swing.JDialog {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Clientes.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(lbf_cliente.class.getName());
 
     /**
-     * Creates new form Clientes
+     * Creates new form lbf_cliente
      */
-    public Clientes() {
+    public lbf_cliente(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
@@ -28,26 +29,6 @@ public class Clientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        jTxtID = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTxtNome = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jFmtCpf = new javax.swing.JFormattedTextField();
-        jFmtRg = new javax.swing.JFormattedTextField();
-        jCboSexo = new javax.swing.JComboBox<>();
         jFmtDataNasc = new javax.swing.JFormattedTextField();
         jFmtCelular = new javax.swing.JFormattedTextField();
         jTxtEmail = new javax.swing.JTextField();
@@ -58,65 +39,34 @@ public class Clientes extends javax.swing.JFrame {
         jCboEstado = new javax.swing.JComboBox<>();
         jChbAtivo = new javax.swing.JCheckBox();
         jBtnIncluir = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jBtnAlterar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jBtnExcluir = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         jBtnConfirmar = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         jBtnCancelar = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         jBtnPesquisar = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jCboEstadoCivil = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jFmtCpf = new javax.swing.JFormattedTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jTxtID = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTxtNome = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jFmtRg = new javax.swing.JFormattedTextField();
+        jCboSexo = new javax.swing.JComboBox<>();
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("ID");
-
-        jTxtID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtIDActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("Nome");
-
-        jTxtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtNomeActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("CPF");
-
-        jLabel4.setText("RG");
-
-        jLabel5.setText("Sexo");
-
-        jLabel6.setText("Data de Nascimento");
-
-        jLabel8.setText("Celular");
-
-        jLabel9.setText("E-mail");
-
-        jLabel10.setText("CEP");
-
-        jLabel11.setText("Endereço");
-
-        jLabel12.setText("Bairro");
-
-        jLabel13.setText("Cidade");
-
-        jLabel14.setText("Estado");
-
-        jLabel15.setText("Ativo");
-
-        jFmtCpf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFmtCpfActionPerformed(evt);
-            }
-        });
-
-        jCboSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jFmtDataNasc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,19 +98,67 @@ public class Clientes extends javax.swing.JFrame {
 
         jBtnIncluir.setText("Incluir");
 
+        jLabel6.setText("Data de Nascimento");
+
         jBtnAlterar.setText("Alterar");
+
+        jLabel8.setText("Celular");
 
         jBtnExcluir.setText("Excluir");
 
+        jLabel9.setText("E-mail");
+
         jBtnConfirmar.setText("Confirmar");
+
+        jLabel10.setText("CEP");
 
         jBtnCancelar.setText("Cancelar");
 
+        jLabel11.setText("Endereço");
+
         jBtnPesquisar.setText("Pesquisar");
+
+        jLabel12.setText("Bairro");
 
         jLabel16.setText("Estado Civil");
 
+        jLabel13.setText("Cidade");
+
         jCboEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro", "Casado", "Divorciado", "União Estável", "Viúvo" }));
+
+        jLabel14.setText("Estado");
+
+        jLabel15.setText("Ativo");
+
+        jFmtCpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFmtCpfActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("ID");
+
+        jTxtID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtIDActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Nome");
+
+        jTxtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtNomeActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("CPF");
+
+        jLabel4.setText("RG");
+
+        jLabel5.setText("Sexo");
+
+        jCboSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,7 +237,7 @@ public class Clientes extends javax.swing.JFrame {
                         .addComponent(jBtnCancelar)
                         .addGap(18, 18, 18)
                         .addComponent(jBtnPesquisar)))
-                .addGap(36, 72, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,7 +274,7 @@ public class Clientes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jFmtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTxtEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -318,9 +316,17 @@ public class Clientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTxtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNomeActionPerformed
+    private void jFmtDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFmtDataNascActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtNomeActionPerformed
+    }//GEN-LAST:event_jFmtDataNascActionPerformed
+
+    private void jTxtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtEmailActionPerformed
+
+    private void jFmtCepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFmtCepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFmtCepActionPerformed
 
     private void jTxtEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtEnderecoActionPerformed
         // TODO add your handling code here:
@@ -330,21 +336,13 @@ public class Clientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jFmtCpfActionPerformed
 
-    private void jFmtDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFmtDataNascActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFmtDataNascActionPerformed
-
-    private void jTxtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtEmailActionPerformed
-
     private void jTxtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtIDActionPerformed
 
-    private void jFmtCepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFmtCepActionPerformed
+    private void jTxtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFmtCepActionPerformed
+    }//GEN-LAST:event_jTxtNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,8 +365,20 @@ public class Clientes extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Clientes().setVisible(true));
+        /* Create and display the dialog */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                lbf_cliente dialog = new lbf_cliente(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -382,7 +392,6 @@ public class Clientes extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jCboEstadoCivil;
     private javax.swing.JComboBox<String> jCboSexo;
     private javax.swing.JCheckBox jChbAtivo;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JFormattedTextField jFmtCelular;
     private javax.swing.JFormattedTextField jFmtCep;
     private javax.swing.JFormattedTextField jFmtCpf;
