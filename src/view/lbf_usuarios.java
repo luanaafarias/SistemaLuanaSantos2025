@@ -285,7 +285,9 @@ public class lbf_usuarios extends javax.swing.JDialog {
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here: 
-        Util.mensagem("Não implementado");
+        lbf_usuarios_pesquisar dlg = new lbf_usuarios_pesquisar(null, true);
+        dlg.setLocationRelativeTo(this);
+        dlg.setVisible(true);
 
 
     }//GEN-LAST:event_jBtnPesquisarActionPerformed

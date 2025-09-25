@@ -98,6 +98,11 @@ public class lbf_produto extends javax.swing.JDialog {
 
         jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pesquisa1.png"))); // NOI18N
         jBtnPesquisar.setText("Pesquisar");
+        jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnPesquisarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Preço");
 
@@ -249,6 +254,13 @@ public class lbf_produto extends javax.swing.JDialog {
         Util.habilitar(false, jTxtID, jTxtNome, jTxtEstoque, jTxtDescricao, jFmtPreco,jChbAtivo, jCboMarca, jBtnConfirmar, jBtnCancelar);
         Util.habilitar(true, jBtnAlterar, jBtnExcluir, jBtnIncluir, jBtnPesquisar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
+
+    private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
+        // TODO add your handling code here:
+        lbf_produto_pesquisar dlg = new lbf_produto_pesquisar(null, true);
+        dlg.setLocationRelativeTo(this);
+        dlg.setVisible(true);
+    }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     /**
      * @param args the command line arguments
