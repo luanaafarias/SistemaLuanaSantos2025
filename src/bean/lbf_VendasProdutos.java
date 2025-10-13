@@ -20,21 +20,21 @@ import org.hibernate.annotations.Parameter;
 @Table(name="lbf_vendas_produtos"
     ,catalog="db_luana_santos"
 )
-public class LbfVendasProdutos  implements java.io.Serializable {
+public class lbf_VendasProdutos  implements java.io.Serializable {
 
 
      private int lbfIdVendasProdutos;
-     private LbfProdutos lbfProdutos;
-     private LbfVendas lbfVendas;
+     private lbf_Produtos lbfProdutos;
+     private lbf_Vendas lbfVendas;
      private int lbfIdVenda;
      private int lbfIdProduto;
      private int lbfQuantidade;
      private double lbfValorUnitario;
 
-    public LbfVendasProdutos() {
+    public lbf_VendasProdutos() {
     }
 
-    public LbfVendasProdutos(LbfProdutos lbfProdutos, LbfVendas lbfVendas, int lbfIdVenda, int lbfIdProduto, int lbfQuantidade, double lbfValorUnitario) {
+    public lbf_VendasProdutos(lbf_Produtos lbfProdutos, lbf_Vendas lbfVendas, int lbfIdVenda, int lbfIdProduto, int lbfQuantidade, double lbfValorUnitario) {
        this.lbfProdutos = lbfProdutos;
        this.lbfVendas = lbfVendas;
        this.lbfIdVenda = lbfIdVenda;
@@ -56,20 +56,20 @@ public class LbfVendasProdutos  implements java.io.Serializable {
     }
 
 @OneToOne(fetch=FetchType.LAZY)@PrimaryKeyJoinColumn
-    public LbfProdutos getLbfProdutos() {
+    public lbf_Produtos getLbfProdutos() {
         return this.lbfProdutos;
     }
     
-    public void setLbfProdutos(LbfProdutos lbfProdutos) {
+    public void setLbfProdutos(lbf_Produtos lbfProdutos) {
         this.lbfProdutos = lbfProdutos;
     }
 
 @OneToOne(fetch=FetchType.LAZY)@PrimaryKeyJoinColumn
-    public LbfVendas getLbfVendas() {
+    public lbf_Vendas getLbfVendas() {
         return this.lbfVendas;
     }
     
-    public void setLbfVendas(LbfVendas lbfVendas) {
+    public void setLbfVendas(lbf_Vendas lbfVendas) {
         this.lbfVendas = lbfVendas;
     }
 

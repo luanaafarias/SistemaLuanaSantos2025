@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 @Table(name="lbf_clientes"
     ,catalog="db_luana_santos"
 )
-public class LbfClientes  implements java.io.Serializable {
+public class lbf_Clientes  implements java.io.Serializable {
 
 
      private int lbfIdClientes;
@@ -39,13 +39,13 @@ public class LbfClientes  implements java.io.Serializable {
      private String lbfEstado;
      private String lbfAtivo;
      private String lbfEstadoCivil;
-     private LbfVendas lbfVendas;
+     private lbf_Vendas lbfVendas;
 
-    public LbfClientes() {
+    public lbf_Clientes() {
     }
 
 	
-    public LbfClientes(String lbfNome, String lbfCpf, String lbfSexo, Date lbfDataDeNascimento, String lbfCelular, String lbfAtivo, String lbfEstadoCivil) {
+    public lbf_Clientes(String lbfNome, String lbfCpf, String lbfSexo, Date lbfDataDeNascimento, String lbfCelular, String lbfAtivo, String lbfEstadoCivil) {
         this.lbfNome = lbfNome;
         this.lbfCpf = lbfCpf;
         this.lbfSexo = lbfSexo;
@@ -54,7 +54,7 @@ public class LbfClientes  implements java.io.Serializable {
         this.lbfAtivo = lbfAtivo;
         this.lbfEstadoCivil = lbfEstadoCivil;
     }
-    public LbfClientes(String lbfNome, String lbfCpf, String lbfRg, String lbfSexo, Date lbfDataDeNascimento, String lbfCelular, String lbfEmail, String lbfCep, String lbfEndereco, String lbfBairro, String lbfCidade, String lbfEstado, String lbfAtivo, String lbfEstadoCivil, LbfVendas lbfVendas) {
+    public lbf_Clientes(String lbfNome, String lbfCpf, String lbfRg, String lbfSexo, Date lbfDataDeNascimento, String lbfCelular, String lbfEmail, String lbfCep, String lbfEndereco, String lbfBairro, String lbfCidade, String lbfEstado, String lbfAtivo, String lbfEstadoCivil, lbf_Vendas lbfVendas) {
        this.lbfNome = lbfNome;
        this.lbfCpf = lbfCpf;
        this.lbfRg = lbfRg;
@@ -224,12 +224,12 @@ public class LbfClientes  implements java.io.Serializable {
         this.lbfEstadoCivil = lbfEstadoCivil;
     }
 
-@OneToOne(fetch=FetchType.LAZY, mappedBy="lbfClientes")
-    public LbfVendas getLbfVendas() {
+@OneToOne(fetch=FetchType.LAZY, mappedBy="lbf_Clientes")
+    public lbf_Vendas getLbfVendas() {
         return this.lbfVendas;
     }
     
-    public void setLbfVendas(LbfVendas lbfVendas) {
+    public void setLbfVendas(lbf_Vendas lbfVendas) {
         this.lbfVendas = lbfVendas;
     }
 

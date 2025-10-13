@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Table(name="lbf_marcas"
     ,catalog="db_luana_santos"
 )
-public class LbfMarcas  implements java.io.Serializable {
+public class lbf_Marcas  implements java.io.Serializable {
 
 
      private int lbfIdMarcas;
@@ -28,17 +28,17 @@ public class LbfMarcas  implements java.io.Serializable {
      private String lbfEmail;
      private String lbfSite;
      private String lbfAtivo;
-     private LbfProdutos lbfProdutos;
+     private lbf_Produtos lbfProdutos;
 
-    public LbfMarcas() {
+    public lbf_Marcas() {
     }
 
 	
-    public LbfMarcas(String lbfNomeDaMarca, String lbfAtivo) {
+    public lbf_Marcas(String lbfNomeDaMarca, String lbfAtivo) {
         this.lbfNomeDaMarca = lbfNomeDaMarca;
         this.lbfAtivo = lbfAtivo;
     }
-    public LbfMarcas(String lbfNomeDaMarca, String lbfPaisDeOrigem, String lbfTelefone, String lbfEmail, String lbfSite, String lbfAtivo, LbfProdutos lbfProdutos) {
+    public lbf_Marcas(String lbfNomeDaMarca, String lbfPaisDeOrigem, String lbfTelefone, String lbfEmail, String lbfSite, String lbfAtivo, lbf_Produtos lbfProdutos) {
        this.lbfNomeDaMarca = lbfNomeDaMarca;
        this.lbfPaisDeOrigem = lbfPaisDeOrigem;
        this.lbfTelefone = lbfTelefone;
@@ -121,11 +121,11 @@ public class LbfMarcas  implements java.io.Serializable {
     }
 
 @OneToOne(fetch=FetchType.LAZY, mappedBy="lbfMarcas")
-    public LbfProdutos getLbfProdutos() {
+    public lbf_Produtos getLbfProdutos() {
         return this.lbfProdutos;
     }
     
-    public void setLbfProdutos(LbfProdutos lbfProdutos) {
+    public void setLbfProdutos(lbf_Produtos lbfProdutos) {
         this.lbfProdutos = lbfProdutos;
     }
 

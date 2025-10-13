@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 @Table(name="lbf_funcionarios"
     ,catalog="db_luana_santos"
 )
-public class LbfFuncionarios  implements java.io.Serializable {
+public class lbf_Funcionarios  implements java.io.Serializable {
 
 
      private int lbfIdFuncionarios;
@@ -31,13 +31,13 @@ public class LbfFuncionarios  implements java.io.Serializable {
      private double lbfSalario;
      private Date lbfDataAdmissao;
      private String lbfAtivo;
-     private LbfVendas lbfVendas;
+     private lbf_Vendas lbfVendas;
 
-    public LbfFuncionarios() {
+    public lbf_Funcionarios() {
     }
 
 	
-    public LbfFuncionarios(String lbfNome, String lbfCpf, String lbfCargo, double lbfSalario, Date lbfDataAdmissao, String lbfAtivo) {
+    public lbf_Funcionarios(String lbfNome, String lbfCpf, String lbfCargo, double lbfSalario, Date lbfDataAdmissao, String lbfAtivo) {
         this.lbfNome = lbfNome;
         this.lbfCpf = lbfCpf;
         this.lbfCargo = lbfCargo;
@@ -45,7 +45,7 @@ public class LbfFuncionarios  implements java.io.Serializable {
         this.lbfDataAdmissao = lbfDataAdmissao;
         this.lbfAtivo = lbfAtivo;
     }
-    public LbfFuncionarios(String lbfNome, String lbfCpf, String lbfCargo, double lbfSalario, Date lbfDataAdmissao, String lbfAtivo, LbfVendas lbfVendas) {
+    public lbf_Funcionarios(String lbfNome, String lbfCpf, String lbfCargo, double lbfSalario, Date lbfDataAdmissao, String lbfAtivo, lbf_Vendas lbfVendas) {
        this.lbfNome = lbfNome;
        this.lbfCpf = lbfCpf;
        this.lbfCargo = lbfCargo;
@@ -128,11 +128,11 @@ public class LbfFuncionarios  implements java.io.Serializable {
     }
 
 @OneToOne(fetch=FetchType.LAZY, mappedBy="lbfClientes")
-    public LbfVendas getLbfVendas() {
+    public lbf_Vendas getLbfVendas() {
         return this.lbfVendas;
     }
     
-    public void setLbfVendas(LbfVendas lbfVendas) {
+    public void setLbfVendas(lbf_Vendas lbfVendas) {
         this.lbfVendas = lbfVendas;
     }
 

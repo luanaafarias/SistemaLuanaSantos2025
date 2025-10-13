@@ -23,23 +23,23 @@ import org.hibernate.annotations.Parameter;
 @Table(name="lbf_vendas"
     ,catalog="db_luana_santos"
 )
-public class LbfVendas  implements java.io.Serializable {
+public class lbf_Vendas  implements java.io.Serializable {
 
 
      private int lbfIdVendas;
-     private LbfClientes lbfClientes;
-     private LbfFuncionarios lbfFuncionarios;
+     private lbf_Clientes lbfClientes;
+     private lbf_Funcionarios lbfFuncionarios;
      private Date lbfDataVenda;
      private int lbfIdClienteLbf;
      private int lbfIdFuncionarioLbf;
      private double lbfTotal;
-     private LbfVendasProdutos lbfVendasProdutos;
+     private lbf_VendasProdutos lbfVendasProdutos;
 
-    public LbfVendas() {
+    public lbf_Vendas() {
     }
 
 	
-    public LbfVendas(LbfClientes lbfClientes, LbfFuncionarios lbfFuncionarios, Date lbfDataVenda, int lbfIdClienteLbf, int lbfIdFuncionarioLbf, double lbfTotal) {
+    public lbf_Vendas(lbf_Clientes lbfClientes, lbf_Funcionarios lbfFuncionarios, Date lbfDataVenda, int lbfIdClienteLbf, int lbfIdFuncionarioLbf, double lbfTotal) {
         this.lbfClientes = lbfClientes;
         this.lbfFuncionarios = lbfFuncionarios;
         this.lbfDataVenda = lbfDataVenda;
@@ -47,7 +47,7 @@ public class LbfVendas  implements java.io.Serializable {
         this.lbfIdFuncionarioLbf = lbfIdFuncionarioLbf;
         this.lbfTotal = lbfTotal;
     }
-    public LbfVendas(LbfClientes lbfClientes, LbfFuncionarios lbfFuncionarios, Date lbfDataVenda, int lbfIdClienteLbf, int lbfIdFuncionarioLbf, double lbfTotal, LbfVendasProdutos lbfVendasProdutos) {
+    public lbf_Vendas(lbf_Clientes lbfClientes, lbf_Funcionarios lbfFuncionarios, Date lbfDataVenda, int lbfIdClienteLbf, int lbfIdFuncionarioLbf, double lbfTotal, lbf_VendasProdutos lbfVendasProdutos) {
        this.lbfClientes = lbfClientes;
        this.lbfFuncionarios = lbfFuncionarios;
        this.lbfDataVenda = lbfDataVenda;
@@ -70,20 +70,20 @@ public class LbfVendas  implements java.io.Serializable {
     }
 
 @OneToOne(fetch=FetchType.LAZY)@PrimaryKeyJoinColumn
-    public LbfClientes getLbfClientes() {
+    public lbf_Clientes getLbfClientes() {
         return this.lbfClientes;
     }
     
-    public void setLbfClientes(LbfClientes lbfClientes) {
+    public void setLbfClientes(lbf_Clientes lbfClientes) {
         this.lbfClientes = lbfClientes;
     }
 
 @OneToOne(fetch=FetchType.LAZY)@PrimaryKeyJoinColumn
-    public LbfFuncionarios getLbfFuncionarios() {
+    public lbf_Funcionarios getLbfFuncionarios() {
         return this.lbfFuncionarios;
     }
     
-    public void setLbfFuncionarios(LbfFuncionarios lbfFuncionarios) {
+    public void setLbfFuncionarios(lbf_Funcionarios lbfFuncionarios) {
         this.lbfFuncionarios = lbfFuncionarios;
     }
 
@@ -128,11 +128,11 @@ public class LbfVendas  implements java.io.Serializable {
     }
 
 @OneToOne(fetch=FetchType.LAZY, mappedBy="lbfProdutos")
-    public LbfVendasProdutos getLbfVendasProdutos() {
+    public lbf_VendasProdutos getLbfVendasProdutos() {
         return this.lbfVendasProdutos;
     }
     
-    public void setLbfVendasProdutos(LbfVendasProdutos lbfVendasProdutos) {
+    public void setLbfVendasProdutos(lbf_VendasProdutos lbfVendasProdutos) {
         this.lbfVendasProdutos = lbfVendasProdutos;
     }
 
