@@ -4,7 +4,7 @@
  */
 package dao;
 
-import bean.lbf_Clientes;
+import bean.LbfClientes;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -44,7 +44,7 @@ public class LbfClientesDAO extends AbstractDAO {
     @Override
     public Object list(int codigo) {
         session.beginTransaction();
-        Criteria criteria = session.createCriteria(lbf_Clientes.class);
+        Criteria criteria = session.createCriteria(LbfClientes.class);
         criteria.add(Restrictions.eq("lbfIdClientes", codigo));
         List lista = criteria.list();
         session.getTransaction().commit();
@@ -54,7 +54,7 @@ public class LbfClientesDAO extends AbstractDAO {
     @Override
     public Object listAll() {
         session.beginTransaction();
-        Criteria criteria = session.createCriteria(lbf_Clientes.class);
+        Criteria criteria = session.createCriteria(LbfClientes.class);
         List lista = criteria.list();
         session.getTransaction().commit();
         return lista;

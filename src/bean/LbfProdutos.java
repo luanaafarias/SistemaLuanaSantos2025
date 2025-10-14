@@ -22,24 +22,24 @@ import org.hibernate.annotations.Parameter;
 @Table(name="lbf_produtos"
     ,catalog="db_luana_santos"
 )
-public class lbf_Produtos  implements java.io.Serializable {
+public class LbfProdutos  implements java.io.Serializable {
 
 
      private int lbfIdProdutos;
-     private lbf_Marcas lbfMarcas;
+     private LbfMarcas lbfMarcas;
      private String lbfNomeDoProduto;
      private String lbfDescricao;
      private double lbfPreco;
      private Date lbfValidade;
      private String lbfTamanho;
      private String lbfCategoria;
-     private lbf_VendasProdutos lbfVendasProdutos;
+     private LbfVendasProdutos lbfVendasProdutos;
 
-    public lbf_Produtos() {
+    public LbfProdutos() {
     }
 
 	
-    public lbf_Produtos(lbf_Marcas lbfMarcas, String lbfNomeDoProduto, double lbfPreco, Date lbfValidade, String lbfTamanho, String lbfCategoria) {
+    public LbfProdutos(LbfMarcas lbfMarcas, String lbfNomeDoProduto, double lbfPreco, Date lbfValidade, String lbfTamanho, String lbfCategoria) {
         this.lbfMarcas = lbfMarcas;
         this.lbfNomeDoProduto = lbfNomeDoProduto;
         this.lbfPreco = lbfPreco;
@@ -47,7 +47,7 @@ public class lbf_Produtos  implements java.io.Serializable {
         this.lbfTamanho = lbfTamanho;
         this.lbfCategoria = lbfCategoria;
     }
-    public lbf_Produtos(lbf_Marcas lbfMarcas, String lbfNomeDoProduto, String lbfDescricao, double lbfPreco, Date lbfValidade, String lbfTamanho, String lbfCategoria, lbf_VendasProdutos lbfVendasProdutos) {
+    public LbfProdutos(LbfMarcas lbfMarcas, String lbfNomeDoProduto, String lbfDescricao, double lbfPreco, Date lbfValidade, String lbfTamanho, String lbfCategoria, LbfVendasProdutos lbfVendasProdutos) {
        this.lbfMarcas = lbfMarcas;
        this.lbfNomeDoProduto = lbfNomeDoProduto;
        this.lbfDescricao = lbfDescricao;
@@ -71,11 +71,11 @@ public class lbf_Produtos  implements java.io.Serializable {
     }
 
 @OneToOne(fetch=FetchType.LAZY)@PrimaryKeyJoinColumn
-    public lbf_Marcas getLbfMarcas() {
+    public LbfMarcas getLbfMarcas() {
         return this.lbfMarcas;
     }
     
-    public void setLbfMarcas(lbf_Marcas lbfMarcas) {
+    public void setLbfMarcas(LbfMarcas lbfMarcas) {
         this.lbfMarcas = lbfMarcas;
     }
 
@@ -140,11 +140,11 @@ public class lbf_Produtos  implements java.io.Serializable {
     }
 
 @OneToOne(fetch=FetchType.LAZY, mappedBy="lbfProdutos")
-    public lbf_VendasProdutos getLbfVendasProdutos() {
+    public LbfVendasProdutos getLbfVendasProdutos() {
         return this.lbfVendasProdutos;
     }
     
-    public void setLbfVendasProdutos(lbf_VendasProdutos lbfVendasProdutos) {
+    public void setLbfVendasProdutos(LbfVendasProdutos lbfVendasProdutos) {
         this.lbfVendasProdutos = lbfVendasProdutos;
     }
 

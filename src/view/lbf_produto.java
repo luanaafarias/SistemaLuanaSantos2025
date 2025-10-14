@@ -5,6 +5,7 @@
 package view;
 
 import tools.Util;
+import bean.LbfProdutos;
 
 /**
  *
@@ -25,6 +26,28 @@ public class lbf_produto extends javax.swing.JDialog {
         Util.habilitar(false, jTxtID, jTxtNome, jTxtEstoque, jTxtDescricao, jFmtPreco,jChbAtivo, jCboMarca,
                 jBtnConfirmar, jBtnCancelar);
     }
+
+    public void beanView(LbfProdutos lbfProduto) {
+    jTxtID.setText(Util.intToStr(lbfProduto.getLbfIdProdutos()));
+    jTxtNome.setText(lbfProduto.getLbfNomeDoProduto());
+    jCboMarca.setSelectedItem(lbfProduto.getLbfMarcas());
+    jTxtDescricao.setText(lbfProduto.getLbfDescricao());
+    jFmtPreco.setText(Util.doubleToStr(lbfProduto.getLbfPreco()));
+    //jTxtEstoque.setText(Util.intToStr(lbfProduto.getLbfEstoque()));
+    //jChbAtivo.setSelected("S".equals(lbfProduto.getLbfAtivo()));
+}
+
+public LbfProdutos viewBean() {
+    LbfProdutos lbfProduto = new LbfProdutos();
+    lbfProduto.setLbfIdProdutos(Util.strToInt(jTxtID.getText()));
+    lbfProduto.setLbfNomeDoProduto(jTxtNome.getText());
+    //lbfProduto.setLbfMarcas(jCboMarca.getSelectedItem().toString());
+    lbfProduto.setLbfDescricao(jTxtDescricao.getText());
+    lbfProduto.setLbfPreco(Util.strToDouble(jFmtPreco.getText()));
+    //lbfProduto.setLbfEstoque(Util.strToInt(jTxtEstoque.getText()));
+    //lbfProduto.setLbfAtivo(jChbAtivo.isSelected() ? "S" : "N");
+    return lbfProduto;
+}
 
     /**
      * This method is called from within the constructor to initialize the form.

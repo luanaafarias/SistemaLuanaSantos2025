@@ -4,6 +4,7 @@
  */
 package view;
 
+import bean.LbfClientes;
 import tools.Util;
 
 /**
@@ -26,6 +27,48 @@ public class lbf_cliente extends javax.swing.JDialog {
                 jFmtRg, jFmtDataNasc, jFmtCep, jFmtCelular, jChbAtivo,jCboSexo, jCboEstadoCivil, jCboEstado,
                 jBtnConfirmar, jBtnCancelar);
     }
+
+    
+public void beanView(LbfClientes lbfCliente) {
+    jTxtID.setText(Util.intToStr(lbfCliente.getLbfIdClientes()));
+    jTxtNome.setText(lbfCliente.getLbfNome());
+    jFmtCpf.setText(lbfCliente.getLbfCpf());
+    jFmtRg.setText(lbfCliente.getLbfRg());
+    jCboSexo.setSelectedItem(lbfCliente.getLbfSexo());
+    jFmtDataNasc.setText(Util.dateToStr(lbfCliente.getLbfDataDeNascimento()));
+    jCboEstadoCivil.setSelectedItem(lbfCliente.getLbfEstadoCivil());
+    jFmtCelular.setText(lbfCliente.getLbfCelular());
+    jTxtEmail.setText(lbfCliente.getLbfEmail());
+    jFmtCep.setText(lbfCliente.getLbfCep());
+    jTxtEndereco.setText(lbfCliente.getLbfEndereco());
+    jTxtBairro.setText(lbfCliente.getLbfBairro());
+    jTxtCidade.setText(lbfCliente.getLbfCidade());
+    jCboEstado.setSelectedItem(lbfCliente.getLbfEstado());
+
+    jChbAtivo.setSelected("S".equals(lbfCliente.getLbfAtivo()));
+}
+
+public LbfClientes viewBean() {
+    LbfClientes lbfCliente = new LbfClientes();
+    lbfCliente.setLbfIdClientes(Util.strToInt(jTxtID.getText()));
+    lbfCliente.setLbfNome(jTxtNome.getText());
+    lbfCliente.setLbfCpf(jFmtCpf.getText());
+    lbfCliente.setLbfRg(jFmtRg.getText());
+    lbfCliente.setLbfSexo(jCboSexo.getSelectedItem().toString());
+    lbfCliente.setLbfDataDeNascimento(Util.strToDate(jFmtDataNasc.getText()));
+    lbfCliente.setLbfEstadoCivil(jCboEstadoCivil.getSelectedItem().toString());
+    lbfCliente.setLbfCelular(jFmtCelular.getText());
+    lbfCliente.setLbfEmail(jTxtEmail.getText());
+    lbfCliente.setLbfCep(jFmtCep.getText());
+    lbfCliente.setLbfEndereco(jTxtEndereco.getText());
+    lbfCliente.setLbfBairro(jTxtBairro.getText());
+    lbfCliente.setLbfCidade(jTxtCidade.getText());
+    lbfCliente.setLbfEstado(jCboEstado.getSelectedItem().toString());
+    lbfCliente.setLbfAtivo(jChbAtivo.isSelected() ? "S" : "N");
+    return lbfCliente;
+}
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -410,7 +453,7 @@ public class lbf_cliente extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(true, jTxtID, jTxtNome, jTxtEndereco, jTxtEmail, jTxtCidade, jTxtBairro, jFmtCpf,
+        Util.habilitar(false, jTxtID, jTxtNome, jTxtEndereco, jTxtEmail, jTxtCidade, jTxtBairro, jFmtCpf,
                 jFmtRg, jFmtDataNasc, jFmtCep, jFmtCelular, jChbAtivo, jCboSexo, jCboEstadoCivil, jCboEstado,
                 jBtnConfirmar, jBtnCancelar);
         Util.habilitar(true, jBtnAlterar, jBtnExcluir, jBtnIncluir, jBtnPesquisar);

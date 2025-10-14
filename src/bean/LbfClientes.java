@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 @Table(name="lbf_clientes"
     ,catalog="db_luana_santos"
 )
-public class lbf_Clientes  implements java.io.Serializable {
+public class LbfClientes  implements java.io.Serializable {
 
 
      private int lbfIdClientes;
@@ -39,13 +39,13 @@ public class lbf_Clientes  implements java.io.Serializable {
      private String lbfEstado;
      private String lbfAtivo;
      private String lbfEstadoCivil;
-     private lbf_Vendas lbfVendas;
+     private LbfVendas lbfVendas;
 
-    public lbf_Clientes() {
+    public LbfClientes() {
     }
 
 	
-    public lbf_Clientes(String lbfNome, String lbfCpf, String lbfSexo, Date lbfDataDeNascimento, String lbfCelular, String lbfAtivo, String lbfEstadoCivil) {
+    public LbfClientes(String lbfNome, String lbfCpf, String lbfSexo, Date lbfDataDeNascimento, String lbfCelular, String lbfAtivo, String lbfEstadoCivil) {
         this.lbfNome = lbfNome;
         this.lbfCpf = lbfCpf;
         this.lbfSexo = lbfSexo;
@@ -54,7 +54,7 @@ public class lbf_Clientes  implements java.io.Serializable {
         this.lbfAtivo = lbfAtivo;
         this.lbfEstadoCivil = lbfEstadoCivil;
     }
-    public lbf_Clientes(String lbfNome, String lbfCpf, String lbfRg, String lbfSexo, Date lbfDataDeNascimento, String lbfCelular, String lbfEmail, String lbfCep, String lbfEndereco, String lbfBairro, String lbfCidade, String lbfEstado, String lbfAtivo, String lbfEstadoCivil, lbf_Vendas lbfVendas) {
+    public LbfClientes(String lbfNome, String lbfCpf, String lbfRg, String lbfSexo, Date lbfDataDeNascimento, String lbfCelular, String lbfEmail, String lbfCep, String lbfEndereco, String lbfBairro, String lbfCidade, String lbfEstado, String lbfAtivo, String lbfEstadoCivil, LbfVendas lbfVendas) {
        this.lbfNome = lbfNome;
        this.lbfCpf = lbfCpf;
        this.lbfRg = lbfRg;
@@ -225,11 +225,11 @@ public class lbf_Clientes  implements java.io.Serializable {
     }
 
 @OneToOne(fetch=FetchType.LAZY, mappedBy="lbf_Clientes")
-    public lbf_Vendas getLbfVendas() {
+    public LbfVendas getLbfVendas() {
         return this.lbfVendas;
     }
     
-    public void setLbfVendas(lbf_Vendas lbfVendas) {
+    public void setLbfVendas(LbfVendas lbfVendas) {
         this.lbfVendas = lbfVendas;
     }
 

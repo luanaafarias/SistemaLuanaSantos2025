@@ -5,6 +5,7 @@
 package view;
 
 import tools.Util;
+import bean.LbfMarcas;
 
 /**
  *
@@ -26,6 +27,28 @@ public class lbf_marca extends javax.swing.JDialog {
                 jFmtTelefone, jChbAtivo,
                 jBtnConfirmar, jBtnCancelar);
     }
+
+    public void beanView(LbfMarcas lbfMarca) {
+    jTxtID.setText(Util.intToStr(lbfMarca.getLbfIdMarcas()));
+    jTxtNome.setText(lbfMarca.getLbfNomeDaMarca());
+    jTxtPais.setText(lbfMarca.getLbfPaisDeOrigem());
+    jTxtSite.setText(lbfMarca.getLbfSite());
+    jFmtEmail.setText(lbfMarca.getLbfEmail());
+    jFmtTelefone.setText(lbfMarca.getLbfTelefone());
+    jChbAtivo.setSelected("S".equals(lbfMarca.getLbfAtivo()));
+}
+
+public LbfMarcas viewBean() {
+    LbfMarcas lbfMarca = new LbfMarcas();
+    lbfMarca.setLbfIdMarcas(Util.strToInt(jTxtID.getText()));
+    lbfMarca.setLbfNomeDaMarca(jTxtNome.getText());
+    lbfMarca.setLbfPaisDeOrigem(jTxtPais.getText());
+    lbfMarca.setLbfSite(jTxtSite.getText());
+    lbfMarca.setLbfEmail(jFmtEmail.getText());
+    lbfMarca.setLbfTelefone(jFmtTelefone.getText());
+    lbfMarca.setLbfAtivo(jChbAtivo.isSelected() ? "S" : "N");
+    return lbfMarca;
+}
 
     /**
      * This method is called from within the constructor to initialize the form.

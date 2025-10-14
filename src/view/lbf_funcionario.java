@@ -4,6 +4,7 @@
  */
 package view;
 
+import bean.LbfFuncionarios;
 import tools.Util;
 
 /**
@@ -26,6 +27,28 @@ public class lbf_funcionario extends javax.swing.JDialog {
                 jFmtEmail, jFmtTelefone, jChbAtivo,
                 jBtnConfirmar, jBtnCancelar);
     }
+
+    
+    public void beanView(LbfFuncionarios lbfFuncionario) {
+    jTxtID.setText(Util.intToStr(lbfFuncionario.getLbfIdFuncionarios()));
+    jTxtNome.setText(lbfFuncionario.getLbfNome());
+    jFmtCPF.setText(lbfFuncionario.getLbfCpf());
+    jTxtCargo.setText(lbfFuncionario.getLbfCargo());
+    jTxtSalario.setText(Util.doubleToStr(lbfFuncionario.getLbfSalario()));
+    jChbAtivo.setSelected("S".equals(lbfFuncionario.getLbfAtivo()));
+}
+
+public LbfFuncionarios viewBean() {
+    LbfFuncionarios lbfFuncionario = new LbfFuncionarios();
+    lbfFuncionario.setLbfIdFuncionarios(Util.strToInt(jTxtID.getText()));
+    lbfFuncionario.setLbfNome(jTxtNome.getText());
+    lbfFuncionario.setLbfCpf(jFmtCPF.getText());
+    lbfFuncionario.setLbfCargo(jTxtCargo.getText());
+    lbfFuncionario.setLbfSalario(Util.strToDouble(jTxtSalario.getText()));
+    lbfFuncionario.setLbfAtivo(jChbAtivo.isSelected() ? "S" : "N");
+    return lbfFuncionario;
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.

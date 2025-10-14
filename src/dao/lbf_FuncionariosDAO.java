@@ -4,7 +4,7 @@
  */
 package dao;
 
-import bean.lbf_Funcionarios;
+import bean.LbfFuncionarios;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -41,24 +41,36 @@ public class LbfFuncionariosDAO extends AbstractDAO {
         session.getTransaction().commit();
     }
 
+    
     @Override
-    public Object list(int codigo) {
+    public List<LbfFuncionarios> list(int codigo) {
         session.beginTransaction();
-        Criteria criteria = session.createCriteria(lbf_Funcionarios.class);
+        Criteria criteria = session.createCriteria(LbfFuncionarios.class);
         criteria.add(Restrictions.eq("lbfIdFuncionarios", codigo));
-        List lista = criteria.list();
+        List<LbfFuncionarios> lista = criteria.list();
         session.getTransaction().commit();
         return lista;
     }
 
+  
     @Override
-    public Object listAll() {
+    public List<LbfFuncionarios> listAll() {
         session.beginTransaction();
-        Criteria criteria = session.createCriteria(lbf_Funcionarios.class);
-        List lista = criteria.list();
+        Criteria criteria = session.createCriteria(LbfFuncionarios.class);
+        List<LbfFuncionarios> lista = criteria.list();
         session.getTransaction().commit();
         return lista;
     }
 
+    // Teste simples do DAO
     public static void main(String[] args) {
-        LbfFuncionariosDAO dao = new LbfFun
+        LbfFuncionariosDAO dao = new LbfFuncionariosDAO();
+
+        List<LbfFuncionarios> funcionarios = dao.listAll();
+        for (LbfFuncionarios f : funcionarios) {
+            System.out.println(f.getLbfIdFuncionarios() + " - " + f.getLbfNome());
+        }
+
+        System.out.println("DAO de funcionários funcionando!");
+    }
+}

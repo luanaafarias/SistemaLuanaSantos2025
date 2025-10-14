@@ -4,7 +4,7 @@
  */
 package dao;
 
-import bean.lbf_Marcas;
+import bean.LbfMarcas;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -44,7 +44,7 @@ public class LbfMarcasDAO extends AbstractDAO {
     @Override
     public Object list(int codigo) {
         session.beginTransaction();
-        Criteria criteria = session.createCriteria(lbf_Marcas.class);
+        Criteria criteria = session.createCriteria(LbfMarcas.class);
         criteria.add(Restrictions.eq("lbfIdMarcas", codigo));
         List lista = criteria.list();
         session.getTransaction().commit();
