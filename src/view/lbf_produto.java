@@ -14,6 +14,8 @@ import bean.LbfProdutos;
 public class lbf_produto extends javax.swing.JDialog {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(lbf_produto.class.getName());
+    private javax.swing.JTextField jTxtPrecoUSD;
+    private javax.swing.JButton jBtnConverterUSD;
 
     /**
      * Creates new form lbf_produto
@@ -78,6 +80,8 @@ public LbfProdutos viewBean() {
         jTxtID = new javax.swing.JTextField();
         jBtnIncluir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jBtnConverter = new javax.swing.JButton();
+        jTxtUSD = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -151,6 +155,13 @@ public LbfProdutos viewBean() {
 
         jLabel2.setText("Nome");
 
+        jBtnConverter.setText("Converter");
+        jBtnConverter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnConverterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,25 +170,9 @@ public LbfProdutos viewBean() {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBtnIncluir)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBtnAlterar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBtnExcluir)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBtnConfirmar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBtnCancelar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBtnPesquisar))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
                         .addComponent(jTxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(jFmtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -196,7 +191,29 @@ public LbfProdutos viewBean() {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCboMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTxtID, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jTxtID, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(jFmtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jBtnConverter)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTxtUSD))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jBtnIncluir)
+                                .addGap(18, 18, 18)
+                                .addComponent(jBtnAlterar)
+                                .addGap(18, 18, 18)
+                                .addComponent(jBtnExcluir)
+                                .addGap(18, 18, 18)
+                                .addComponent(jBtnConfirmar)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnCancelar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnPesquisar)))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -221,8 +238,11 @@ public LbfProdutos viewBean() {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jFmtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jFmtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jBtnConverter)
+                        .addComponent(jTxtUSD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jTxtEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -285,6 +305,20 @@ public LbfProdutos viewBean() {
         dlg.setVisible(true);
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
+    private void jBtnConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConverterActionPerformed
+        // TODO add your handling code here:                                           
+    try {
+        String precoStr = jFmtPreco.getText().replace(",", "."); 
+        double precoBRL = Double.parseDouble(precoStr);
+
+        double cotacaoUSD = 5.0; 
+        double precoUSD = precoBRL / cotacaoUSD;
+
+        jTxtUSD.setText(String.format("%.2f", precoUSD));
+    } catch (NumberFormatException e) {
+        Util.msgErro("Preço inválido!");
+    }//GEN-LAST:event_jBtnConverterActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -326,6 +360,7 @@ public LbfProdutos viewBean() {
     private javax.swing.JButton jBtnAlterar;
     private javax.swing.JButton jBtnCancelar;
     private javax.swing.JButton jBtnConfirmar;
+    private javax.swing.JButton jBtnConverter;
     private javax.swing.JButton jBtnExcluir;
     private javax.swing.JButton jBtnIncluir;
     private javax.swing.JButton jBtnPesquisar;
@@ -343,5 +378,6 @@ public LbfProdutos viewBean() {
     private javax.swing.JTextField jTxtEstoque;
     private javax.swing.JTextField jTxtID;
     private javax.swing.JTextField jTxtNome;
+    private javax.swing.JTextField jTxtUSD;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,7 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package view;
+package view
+        
+import bean.LbfClientes;
+import dao.LbfClientesDAO;
+import tools.Util;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,13 +17,43 @@ public class lbf_cliente_pesquisar extends javax.swing.JDialog {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(lbf_cliente_pesquisar.class.getName());
 
+     private LbfClientes clienteSelecionado;
+     private ClienteTableModel clienteTableModel;
+    
+    
     /**
      * Creates new form lbf_cliente_pesquisar
      */
+    
+    
     public lbf_cliente_pesquisar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Pesquisar Clientes");
+        carregarTabela();
     }
+
+    
+       private void carregarTabela() {
+        LbfClientesDAO dao = new LbfClientesDAO();
+        List<LbfClientes> lista = dao.listAll();
+        clienteTableModel = new ClienteTableModel(lista);
+        jTable1.setModel(clienteTableModel);
+    }
+       
+       
+       public LbfClientes getClienteSelecionado() {
+        return clienteSelecionado;
+    }
+
+    private void jBtnOKActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        int row = jTable1.getSelectedRow();
+        if (row >= 0) {
+            clienteSelecionado = clienteTableModel.getClienteAt(row);
+        }
+        this.dispose();
+    }        
 
     /**
      * This method is called from within the constructor to initialize the form.
