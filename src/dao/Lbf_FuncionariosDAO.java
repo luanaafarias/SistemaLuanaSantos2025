@@ -14,7 +14,7 @@ import org.hibernate.criterion.Restrictions;
  * @author u09192385133
  */
 
-public class LbfFuncionariosDAO extends AbstractDAO {
+public class Lbf_FuncionariosDAO extends AbstractDAO { 
 
     @Override
     public void insert(Object object) {
@@ -62,9 +62,9 @@ public class LbfFuncionariosDAO extends AbstractDAO {
         return lista;
     }
 
-    // Teste simples do DAO
+    // Teste 
     public static void main(String[] args) {
-        LbfFuncionariosDAO dao = new LbfFuncionariosDAO();
+        Lbf_FuncionariosDAO dao = new Lbf_FuncionariosDAO();
 
         List<LbfFuncionarios> funcionarios = dao.listAll();
         for (LbfFuncionarios f : funcionarios) {

@@ -2,58 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package view
-        
-import bean.LbfClientes;
-import dao.LbfClientesDAO;
-import tools.Util;
-import javax.swing.JOptionPane;
+package view;
 
 /**
  *
  * @author ghostface
  */
-public class lbf_cliente_pesquisar extends javax.swing.JDialog {
+public class JDlg_Lbf_usuarios_pesquisar extends javax.swing.JDialog {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(lbf_cliente_pesquisar.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDlg_Lbf_usuarios_pesquisar.class.getName());
 
-     private LbfClientes clienteSelecionado;
-     private ClienteTableModel clienteTableModel;
-    
-    
     /**
-     * Creates new form lbf_cliente_pesquisar
+     * Creates new form lbf_usuarios_pesquisar
      */
-    
-    
-    public lbf_cliente_pesquisar(java.awt.Frame parent, boolean modal) {
+    public JDlg_Lbf_usuarios_pesquisar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        setLocationRelativeTo(null);
-        setTitle("Pesquisar Clientes");
-        carregarTabela();
+        
     }
-
-    
-       private void carregarTabela() {
-        LbfClientesDAO dao = new LbfClientesDAO();
-        List<LbfClientes> lista = dao.listAll();
-        clienteTableModel = new ClienteTableModel(lista);
-        jTable1.setModel(clienteTableModel);
-    }
-       
-       
-       public LbfClientes getClienteSelecionado() {
-        return clienteSelecionado;
-    }
-
-    private void jBtnOKActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        int row = jTable1.getSelectedRow();
-        if (row >= 0) {
-            clienteSelecionado = clienteTableModel.getClienteAt(row);
-        }
-        this.dispose();
-    }        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,7 +44,7 @@ public class lbf_cliente_pesquisar extends javax.swing.JDialog {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "CPF", "RG"
+                "Código", "Nome", "CPF", "Email"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -94,7 +60,7 @@ public class lbf_cliente_pesquisar extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBtnOK)
@@ -104,9 +70,9 @@ public class lbf_cliente_pesquisar extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jBtnOK)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addGap(17, 17, 17))
         );
 
         pack();
@@ -142,7 +108,7 @@ public class lbf_cliente_pesquisar extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                lbf_cliente_pesquisar dialog = new lbf_cliente_pesquisar(new javax.swing.JFrame(), true);
+                JDlg_Lbf_usuarios_pesquisar dialog = new JDlg_Lbf_usuarios_pesquisar(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -11,14 +11,14 @@ import tools.Util;
  *
  * @author ghostface
  */
-public class lbf_cliente extends javax.swing.JDialog {
+public class JDlg_Lbf_cliente extends javax.swing.JDialog {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(lbf_cliente.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDlg_Lbf_cliente.class.getName());
 
     /**
      * Creates new form lbf_cliente
      */
-    public lbf_cliente(java.awt.Frame parent, boolean modal) {
+    public JDlg_Lbf_cliente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setTitle("Cadastro de Cliente");
@@ -469,7 +469,7 @@ public LbfClientes viewBean() {
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
-        lbf_cliente_pesquisar dlg = new lbf_cliente_pesquisar(null, true);
+        JDlg_Lbf_cliente_pesquisar dlg = new JDlg_Lbf_cliente_pesquisar(null, true);
         dlg.setLocationRelativeTo(this);
         dlg.setVisible(true);
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
@@ -499,7 +499,7 @@ public LbfClientes viewBean() {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                lbf_cliente dialog = new lbf_cliente(new javax.swing.JFrame(), true);
+                JDlg_Lbf_cliente dialog = new JDlg_Lbf_cliente(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

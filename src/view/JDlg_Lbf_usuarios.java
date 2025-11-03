@@ -12,9 +12,9 @@ import tools.Util;
  *
  * @author u10916731103
  */
-public class lbf_usuarios extends javax.swing.JDialog {
+public class JDlg_Lbf_usuarios extends javax.swing.JDialog {
 
-    public lbf_usuarios(java.awt.Frame parent, boolean modal) {
+    public JDlg_Lbf_usuarios(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setTitle("Cadastro de Usuários");
@@ -285,7 +285,7 @@ public class lbf_usuarios extends javax.swing.JDialog {
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here: 
-        lbf_usuarios_pesquisar dlg = new lbf_usuarios_pesquisar(null, true);
+        JDlg_Lbf_usuarios_pesquisar dlg = new JDlg_Lbf_usuarios_pesquisar(null, true);
         dlg.setLocationRelativeTo(this);
         dlg.setVisible(true);
 
@@ -327,14 +327,22 @@ public class lbf_usuarios extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(lbf_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlg_Lbf_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(lbf_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlg_Lbf_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(lbf_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlg_Lbf_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(lbf_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlg_Lbf_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -347,7 +355,7 @@ public class lbf_usuarios extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                lbf_usuarios dialog = new lbf_usuarios(new javax.swing.JFrame(), true);
+                JDlg_Lbf_usuarios dialog = new JDlg_Lbf_usuarios(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

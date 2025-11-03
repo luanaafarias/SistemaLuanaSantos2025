@@ -8,14 +8,14 @@ package view;
  *
  * @author ghostface
  */
-public class lbf_Principal extends javax.swing.JFrame {
+public class JFrm_Lbf_Principal extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(lbf_Principal.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JFrm_Lbf_Principal.class.getName());
 
     /**
      * Creates new form lbf_Principal
      */
-    public lbf_Principal() {
+    public JFrm_Lbf_Principal() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         setTitle("Sistema de Loja de Maquiagem");
@@ -126,13 +126,13 @@ public class lbf_Principal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        lbf_cliente lbf_cliente = new  lbf_cliente(null,true);
+        JDlg_Lbf_cliente lbf_cliente = new  JDlg_Lbf_cliente(null,true);
         lbf_cliente.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        lbf_produto lbf_produto = new  lbf_produto(null,true);
+        JDlg_Lbf_produto lbf_produto = new  JDlg_Lbf_produto(null,true);
         lbf_produto.setVisible(true);
         
     
@@ -140,13 +140,13 @@ public class lbf_Principal extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        lbf_funcionario lbf_funcionario = new  lbf_funcionario(null,true);
+        JDlg_Lbf_funcionario lbf_funcionario = new  JDlg_Lbf_funcionario(null,true);
         lbf_funcionario.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        lbf_marca lbf_marca = new  lbf_marca(null,true);
+        JDlg_Lbf_marca lbf_marca = new  JDlg_Lbf_marca(null,true);
         lbf_marca.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
@@ -157,7 +157,7 @@ public class lbf_Principal extends javax.swing.JFrame {
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        lbf_usuarios lbf_usuarios = new  lbf_usuarios(null,true);
+        JDlg_Lbf_usuarios lbf_usuarios = new  JDlg_Lbf_usuarios(null,true);
         lbf_usuarios.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
@@ -183,7 +183,7 @@ public class lbf_Principal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new lbf_Principal().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new JFrm_Lbf_Principal().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

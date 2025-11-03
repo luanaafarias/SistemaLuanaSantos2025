@@ -11,14 +11,14 @@ import bean.LbfMarcas;
  *
  * @author ghostface
  */
-public class lbf_marca extends javax.swing.JDialog {
+public class JDlg_Lbf_marca extends javax.swing.JDialog {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(lbf_marca.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDlg_Lbf_marca.class.getName());
 
     /**
      * Creates new form lbf_marca
      */
-    public lbf_marca(java.awt.Frame parent, boolean modal) {
+    public JDlg_Lbf_marca(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setTitle("Cadastro de Marca");
@@ -304,7 +304,7 @@ public LbfMarcas viewBean() {
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
-        lbf_marca_pesquisar dlg = new lbf_marca_pesquisar(null, true);
+        JDlg_Lbf_marca_pesquisar dlg = new JDlg_Lbf_marca_pesquisar(null, true);
         dlg.setLocationRelativeTo(this);
         dlg.setVisible(true);
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
@@ -334,7 +334,7 @@ public LbfMarcas viewBean() {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                lbf_marca dialog = new lbf_marca(new javax.swing.JFrame(), true);
+                JDlg_Lbf_marca dialog = new JDlg_Lbf_marca(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

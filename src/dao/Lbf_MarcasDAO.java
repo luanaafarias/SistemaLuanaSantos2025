@@ -13,8 +13,7 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author u09192385133
  */
-
-public class LbfMarcasDAO extends AbstractDAO {
+public class Lbf_MarcasDAO extends AbstractDAO {
 
     @Override
     public void insert(Object object) {
@@ -54,4 +53,7 @@ public class LbfMarcasDAO extends AbstractDAO {
     @Override
     public Object listAll() {
         session.beginTransaction();
-        Criteria criteria = session.create
+//        Criteria criteria = session.create
+        return null;
+    }
+}

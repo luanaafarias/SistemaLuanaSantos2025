@@ -46,11 +46,12 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://10.7.0.51:33062/db_luana_santos?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">luana_santos</property>
     <property name="hibernate.connection.password">luana_santos</property>
-    <mapping class="bean.LbfVendasProdutos"/>
-    <mapping class="bean.LbfClientes"/>
     <mapping class="bean.LbfFuncionarios"/>
     <mapping class="bean.LbfProdutos"/>
-    <mapping class="bean.LbfVendas"/>
+    <mapping class="bean.LbfUsuarios"/>
+    <mapping class="bean.LbfVendasProdutos"/>
+    <mapping class="bean.LbfClientes"/>
     <mapping class="bean.LbfMarcas"/>
+    <mapping class="bean.LbfVendas"/>
   </session-factory>
 </hibernate-configuration>

@@ -1,5 +1,5 @@
 package bean;
-// Generated 13/10/2025 10:42:42 by Hibernate Tools 4.3.1
+// Generated 03/11/2025 14:27:43 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -224,7 +224,7 @@ public class LbfClientes  implements java.io.Serializable {
         this.lbfEstadoCivil = lbfEstadoCivil;
     }
 
-@OneToOne(fetch=FetchType.LAZY, mappedBy="lbf_Clientes")
+@OneToOne(fetch=FetchType.LAZY, mappedBy="lbfClientes")
     public LbfVendas getLbfVendas() {
         return this.lbfVendas;
     }

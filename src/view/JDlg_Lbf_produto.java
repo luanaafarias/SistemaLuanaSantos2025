@@ -11,21 +11,21 @@ import bean.LbfProdutos;
  *
  * @author ghostface
  */
-public class lbf_produto extends javax.swing.JDialog {
+public class JDlg_Lbf_produto extends javax.swing.JDialog {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(lbf_produto.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDlg_Lbf_produto.class.getName());
     private javax.swing.JTextField jTxtPrecoUSD;
     private javax.swing.JButton jBtnConverterUSD;
 
     /**
      * Creates new form lbf_produto
      */
-    public lbf_produto(java.awt.Frame parent, boolean modal) {
+    public JDlg_Lbf_produto(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setTitle("Cadastro de Produto");
         setLocationRelativeTo(null);
-        Util.habilitar(false, jTxtID, jTxtNome, jTxtEstoque, jTxtDescricao, jFmtPreco,jChbAtivo, jCboMarca,
+        Util.habilitar(false, jTxtID, jTxtNome, jTxtTamanho, jTxtDescricao, jFmtPreco,jFmtValidade, jCboMarca, jTxtUSD,
                 jBtnConfirmar, jBtnCancelar);
     }
 
@@ -35,19 +35,15 @@ public class lbf_produto extends javax.swing.JDialog {
     jCboMarca.setSelectedItem(lbfProduto.getLbfMarcas());
     jTxtDescricao.setText(lbfProduto.getLbfDescricao());
     jFmtPreco.setText(Util.doubleToStr(lbfProduto.getLbfPreco()));
-    //jTxtEstoque.setText(Util.intToStr(lbfProduto.getLbfEstoque()));
-    //jChbAtivo.setSelected("S".equals(lbfProduto.getLbfAtivo()));
+    
 }
 
 public LbfProdutos viewBean() {
     LbfProdutos lbfProduto = new LbfProdutos();
     lbfProduto.setLbfIdProdutos(Util.strToInt(jTxtID.getText()));
     lbfProduto.setLbfNomeDoProduto(jTxtNome.getText());
-    //lbfProduto.setLbfMarcas(jCboMarca.getSelectedItem().toString());
     lbfProduto.setLbfDescricao(jTxtDescricao.getText());
     lbfProduto.setLbfPreco(Util.strToDouble(jFmtPreco.getText()));
-    //lbfProduto.setLbfEstoque(Util.strToInt(jTxtEstoque.getText()));
-    //lbfProduto.setLbfAtivo(jChbAtivo.isSelected() ? "S" : "N");
     return lbfProduto;
 }
 
@@ -72,16 +68,16 @@ public LbfProdutos viewBean() {
         jTxtDescricao = new javax.swing.JTextField();
         jFmtPreco = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
-        jChbAtivo = new javax.swing.JCheckBox();
-        jLabel6 = new javax.swing.JLabel();
-        jTxtEstoque = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jTxtID = new javax.swing.JTextField();
         jBtnIncluir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jBtnConverter = new javax.swing.JButton();
         jTxtUSD = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jFmtValidade = new javax.swing.JFormattedTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jTxtTamanho = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -131,13 +127,15 @@ public LbfProdutos viewBean() {
             }
         });
 
+        jTxtDescricao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtDescricaoActionPerformed(evt);
+            }
+        });
+
         jLabel5.setText("Preço");
 
-        jLabel6.setText("Estoque");
-
         jLabel1.setText("ID");
-
-        jLabel7.setText("Ativo");
 
         jTxtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,6 +160,10 @@ public LbfProdutos viewBean() {
             }
         });
 
+        jLabel8.setText("Validade");
+
+        jLabel9.setText("Tamanho");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -169,18 +171,6 @@ public LbfProdutos viewBean() {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jChbAtivo)
-                            .addComponent(jTxtEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,23 +183,34 @@ public LbfProdutos viewBean() {
                             .addComponent(jCboMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTxtID, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)
-                                .addComponent(jFmtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jBtnIncluir)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jBtnAlterar)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jBtnExcluir)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jBtnConfirmar))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel9))
+                                    .addGap(26, 26, 26)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jFmtValidade, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jFmtPreco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                                        .addComponent(jTxtTamanho))
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jBtnConverter)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jTxtUSD)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
-                                .addComponent(jBtnConverter)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTxtUSD))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jBtnIncluir)
-                                .addGap(18, 18, 18)
-                                .addComponent(jBtnAlterar)
-                                .addGap(18, 18, 18)
-                                .addComponent(jBtnExcluir)
-                                .addGap(18, 18, 18)
-                                .addComponent(jBtnConfirmar)))
+                                .addComponent(jTxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jBtnCancelar)
                         .addGap(18, 18, 18)
@@ -242,15 +243,15 @@ public LbfProdutos viewBean() {
                         .addComponent(jFmtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jBtnConverter)
                         .addComponent(jTxtUSD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jTxtEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jChbAtivo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jFmtValidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jTxtTamanho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnIncluir)
                     .addComponent(jBtnAlterar)
@@ -270,14 +271,14 @@ public LbfProdutos viewBean() {
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
-         Util.habilitar(true, jTxtID, jTxtNome, jTxtEstoque, jTxtDescricao, jFmtPreco,jChbAtivo, jCboMarca, jBtnConfirmar, jBtnCancelar);
+         Util.habilitar(true, jTxtID, jTxtNome, jTxtTamanho, jTxtDescricao, jFmtPreco,jFmtValidade, jCboMarca, jTxtUSD, jBtnConfirmar, jBtnCancelar);
         Util.habilitar(false, jBtnAlterar, jBtnExcluir, jBtnIncluir, jBtnPesquisar);
-        Util.limpar(jTxtID, jTxtNome, jTxtEstoque, jTxtDescricao, jFmtPreco,jChbAtivo);
+        Util.limpar(jTxtID, jTxtNome, jTxtTamanho, jTxtDescricao, jFmtPreco,jFmtValidade, jTxtUSD);
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(true, jTxtID, jTxtNome, jTxtEstoque, jTxtDescricao, jFmtPreco,jChbAtivo,jCboMarca, jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(true, jTxtID, jTxtNome, jTxtTamanho, jTxtDescricao, jFmtPreco,jFmtValidade,jCboMarca, jTxtUSD, jBtnConfirmar, jBtnCancelar);
         Util.habilitar(false, jBtnAlterar, jBtnExcluir, jBtnIncluir, jBtnPesquisar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
@@ -288,19 +289,19 @@ public LbfProdutos viewBean() {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(true, jTxtID, jTxtNome, jTxtEstoque, jTxtDescricao, jFmtPreco,jChbAtivo, jCboMarca, jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(true, jTxtID, jTxtNome, jTxtTamanho, jTxtDescricao, jFmtPreco,jFmtValidade, jCboMarca, jTxtUSD, jBtnConfirmar, jBtnCancelar);
         Util.habilitar(true, jBtnAlterar, jBtnExcluir, jBtnIncluir, jBtnPesquisar);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(false, jTxtID, jTxtNome, jTxtEstoque, jTxtDescricao, jFmtPreco,jChbAtivo, jCboMarca, jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(false, jTxtID, jTxtNome, jTxtTamanho, jTxtDescricao, jFmtPreco,jFmtValidade, jCboMarca, jTxtUSD, jBtnConfirmar, jBtnCancelar);
         Util.habilitar(true, jBtnAlterar, jBtnExcluir, jBtnIncluir, jBtnPesquisar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
-        lbf_produto_pesquisar dlg = new lbf_produto_pesquisar(null, true);
+        JDlg_Lbf_produto_pesquisar dlg = new JDlg_Lbf_produto_pesquisar(null, true);
         dlg.setLocationRelativeTo(this);
         dlg.setVisible(true);
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
@@ -316,8 +317,13 @@ public LbfProdutos viewBean() {
 
         jTxtUSD.setText(String.format("%.2f", precoUSD));
     } catch (NumberFormatException e) {
-        Util.msgErro("Preço inválido!");
+        //Util.msgErro("Preço inválido!");
     }//GEN-LAST:event_jBtnConverterActionPerformed
+
+    private void jTxtDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtDescricaoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTxtDescricaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -344,7 +350,7 @@ public LbfProdutos viewBean() {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                lbf_produto dialog = new lbf_produto(new javax.swing.JFrame(), true);
+                JDlg_Lbf_produto dialog = new JDlg_Lbf_produto(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -365,19 +371,19 @@ public LbfProdutos viewBean() {
     private javax.swing.JButton jBtnIncluir;
     private javax.swing.JButton jBtnPesquisar;
     private javax.swing.JComboBox<String> jCboMarca;
-    private javax.swing.JCheckBox jChbAtivo;
     private javax.swing.JFormattedTextField jFmtPreco;
+    private javax.swing.JFormattedTextField jFmtValidade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTxtDescricao;
-    private javax.swing.JTextField jTxtEstoque;
     private javax.swing.JTextField jTxtID;
     private javax.swing.JTextField jTxtNome;
+    private javax.swing.JTextField jTxtTamanho;
     private javax.swing.JTextField jTxtUSD;
     // End of variables declaration//GEN-END:variables
 }

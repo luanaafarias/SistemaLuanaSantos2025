@@ -14,7 +14,7 @@ import org.hibernate.criterion.Restrictions;
  * @author u09192385133
  */
 
-public class LbfVendasProdutosDAO extends AbstractDAO {
+public class Lbf_VendasProdutosDAO extends AbstractDAO {
 
     @Override
     public void insert(Object object) {
@@ -61,7 +61,7 @@ public class LbfVendasProdutosDAO extends AbstractDAO {
     }
 
     public static void main(String[] args) {
-        LbfVendasProdutosDAO dao = new LbfVendasProdutosDAO();
+        Lbf_VendasProdutosDAO dao = new Lbf_VendasProdutosDAO();
         List lista = (List) dao.listAll();
         System.out.println("Total de vendas de produtos: " + lista.size());
     }

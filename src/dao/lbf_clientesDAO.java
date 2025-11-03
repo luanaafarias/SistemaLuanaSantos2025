@@ -14,7 +14,7 @@ import org.hibernate.criterion.Restrictions;
  * @author u09192385133
  */
 
-public class LbfClientesDAO extends AbstractDAO {
+public class Lbf_ClientesDAO extends AbstractDAO {
 
     @Override
     public void insert(Object object) {
@@ -61,7 +61,7 @@ public class LbfClientesDAO extends AbstractDAO {
     }
 
     public static void main(String[] args) {
-        LbfClientesDAO dao = new LbfClientesDAO();
+        Lbf_ClientesDAO dao = new Lbf_ClientesDAO();
         List lista = (List) dao.listAll();
         System.out.println("Total de clientes: " + lista.size());
     }

@@ -1,5 +1,6 @@
 package bean;
-// Generated 13/10/2025 10:42:42 by Hibernate Tools 4.3.1
+// Generated 03/11/2025 14:27:43 by Hibernate Tools 4.3.1
+
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -32,29 +33,29 @@ public class LbfProdutos  implements java.io.Serializable {
      private double lbfPreco;
      private Date lbfValidade;
      private String lbfTamanho;
-     private String lbfCategoria;
+     private String lbfMarca;
      private LbfVendasProdutos lbfVendasProdutos;
 
     public LbfProdutos() {
     }
 
 	
-    public LbfProdutos(LbfMarcas lbfMarcas, String lbfNomeDoProduto, double lbfPreco, Date lbfValidade, String lbfTamanho, String lbfCategoria) {
+    public LbfProdutos(LbfMarcas lbfMarcas, String lbfNomeDoProduto, double lbfPreco, Date lbfValidade, String lbfTamanho, String lbfMarca) {
         this.lbfMarcas = lbfMarcas;
         this.lbfNomeDoProduto = lbfNomeDoProduto;
         this.lbfPreco = lbfPreco;
         this.lbfValidade = lbfValidade;
         this.lbfTamanho = lbfTamanho;
-        this.lbfCategoria = lbfCategoria;
+        this.lbfMarca = lbfMarca;
     }
-    public LbfProdutos(LbfMarcas lbfMarcas, String lbfNomeDoProduto, String lbfDescricao, double lbfPreco, Date lbfValidade, String lbfTamanho, String lbfCategoria, LbfVendasProdutos lbfVendasProdutos) {
+    public LbfProdutos(LbfMarcas lbfMarcas, String lbfNomeDoProduto, String lbfDescricao, double lbfPreco, Date lbfValidade, String lbfTamanho, String lbfMarca, LbfVendasProdutos lbfVendasProdutos) {
        this.lbfMarcas = lbfMarcas;
        this.lbfNomeDoProduto = lbfNomeDoProduto;
        this.lbfDescricao = lbfDescricao;
        this.lbfPreco = lbfPreco;
        this.lbfValidade = lbfValidade;
        this.lbfTamanho = lbfTamanho;
-       this.lbfCategoria = lbfCategoria;
+       this.lbfMarca = lbfMarca;
        this.lbfVendasProdutos = lbfVendasProdutos;
     }
    
@@ -130,13 +131,13 @@ public class LbfProdutos  implements java.io.Serializable {
     }
 
     
-    @Column(name="lbf_categoria", nullable=false, length=50)
-    public String getLbfCategoria() {
-        return this.lbfCategoria;
+    @Column(name="lbf_marca", nullable=false, length=50)
+    public String getLbfMarca() {
+        return this.lbfMarca;
     }
     
-    public void setLbfCategoria(String lbfCategoria) {
-        this.lbfCategoria = lbfCategoria;
+    public void setLbfMarca(String lbfMarca) {
+        this.lbfMarca = lbfMarca;
     }
 
 @OneToOne(fetch=FetchType.LAZY, mappedBy="lbfProdutos")

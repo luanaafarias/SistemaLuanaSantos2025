@@ -37,11 +37,11 @@ public class Util {
             if (componentes[i] instanceof JCheckBox) {
                 ((JCheckBox) componentes[i]).setSelected(false);
             }
-            
+
             if (componentes[i] instanceof JFormattedTextField) {
-            ((JFormattedTextField) componentes[i]).setValue(null); 
-        }
-            
+                ((JFormattedTextField) componentes[i]).setValue(null);
+            }
+
         }
     }
 
@@ -61,20 +61,20 @@ public class Util {
     public static String intToStr(int num) {
         return String.valueOf(num);
     }
-    
-    public static double strToDouble(String cad){
-    return 0;
+
+    public static double strToDouble(String cad) {
+        return 0;
     }
-    
-    public static String doubleToStr(double num){
-    return "";
+
+    public static String doubleToStr(double num) {
+        return String.valueOf(num);
     }
-    
-    public static Date strToDate(String cad){
-    return null;
+
+    public static Date strToDate(String cad) {
+        return null;
     }
-    public static String dateToStr(Date data){
-    return "";
+
+    public static String dateToStr(Date data) {
+        return "";
     }
 }
-

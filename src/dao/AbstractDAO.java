@@ -16,7 +16,7 @@ public abstract class AbstractDAO {
     protected Session session;
     
     public AbstractDAO() {
-        SessionFactory sessionFactory = Hibernate.Util.getSessionFactory();
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
     }
     

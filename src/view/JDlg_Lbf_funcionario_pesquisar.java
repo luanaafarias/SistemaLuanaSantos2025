@@ -4,20 +4,28 @@
  */
 package view;
 
+import dao.Lbf_FuncionariosDAO;
+import java.util.List;
+
 /**
  *
  * @author ghostface
  */
-public class lbf_marca_pesquisar extends javax.swing.JDialog {
+public class JDlg_Lbf_funcionario_pesquisar extends javax.swing.JDialog {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(lbf_marca_pesquisar.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDlg_Lbf_funcionario_pesquisar.class.getName());
 
     /**
-     * Creates new form lbf_marca_pesquisar
+     * Creates new form lbf_funcionario_pesquisar
      */
-    public lbf_marca_pesquisar(java.awt.Frame parent, boolean modal) {
+    public JDlg_Lbf_funcionario_pesquisar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        Lbf_FuncionariosDAO lbf_FuncionariosDAO = new Lbf_FuncionariosDAO();
+        List lista = (List) lbf_FuncionariosDAO.listAll();
+        ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
+        controllerFuncionario.setList(lista);
+        jTable1.setModel(controllerFuncionario);
     }
 
     /**
@@ -43,7 +51,7 @@ public class lbf_marca_pesquisar extends javax.swing.JDialog {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "País de Origem", "Telefone"
+                "ID", "Nome", "CPF", "Cargo"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -59,9 +67,7 @@ public class lbf_marca_pesquisar extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBtnOK)
@@ -73,7 +79,7 @@ public class lbf_marca_pesquisar extends javax.swing.JDialog {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jBtnOK)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 28, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,7 +115,7 @@ public class lbf_marca_pesquisar extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                lbf_marca_pesquisar dialog = new lbf_marca_pesquisar(new javax.swing.JFrame(), true);
+                JDlg_Lbf_funcionario_pesquisar dialog = new JDlg_Lbf_funcionario_pesquisar(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
