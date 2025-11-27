@@ -3,24 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/ControllerCliente.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/JDlg_Lbf_marca.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/JDlg_Lbf_funcionario_pesquisar.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/hibernate.cfg.xml</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/dao/Lbf_ProdutosDAO.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/JDlg_Lbf_marca_pesquisar.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/dao/Lbf_MarcasDAO.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/JDlg_Lbf_produto_pesquisar.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/ControllerFuncionario.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/ControllerProduto.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/JDlg_Lbf_cliente_pesquisar.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/JDlg_Lbf_produto.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/bean/hibernate.reveng.xml</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/dao/Lbf_FuncionariosDAO.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/bean/LbfClientes.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/JDlg_Lbf_usuarios_pesquisar.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/ControllerMarca.java</file>
-            <file>file:/C:/Users/u09192385133/Downloads/SistemaLuanaSantos2025/src/view/ControllerUsuarios.java</file>
+            <file>file:/C:/Users/ghostface/Documents/Nova%20Pasta/SistemaLuanaSantos2025/src/view/JFrm_Lbf_Principal.java</file>
+            <file>file:/C:/Users/ghostface/Documents/Nova%20Pasta/SistemaLuanaSantos2025/src/view/JDlgLbf_Login.java</file>
         </group>
     </open-files>
 </project-private>

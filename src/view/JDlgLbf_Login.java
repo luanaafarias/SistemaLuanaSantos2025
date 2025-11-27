@@ -20,7 +20,7 @@ public class JDlgLbf_Login extends javax.swing.JDialog {
      */
     
     private int tentativas = 0;
-    private int tentativasMax = 4;
+    private int tentativasMax = 4 ;
     private Lbf_UsuariosDAO DAO = new Lbf_UsuariosDAO();
 
     public JDlgLbf_Login(java.awt.Frame parent, boolean modal) {
